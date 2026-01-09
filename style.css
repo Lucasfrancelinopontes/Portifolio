@@ -399,7 +399,11 @@ footer ul{
         margin-right: 0;
         width: 100%; 
     }
+    #userfoto {
+        margin: auto;
+    }
     #userfoto img {
+        
         width: 200px; 
         margin-top: 0;
     }
