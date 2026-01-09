@@ -38,8 +38,16 @@ html{
 
 .btnsecundario:hover {
     background-color: #becdfa; 
-    color: var(--primary); /* O texto fica azul */
+    color: var(--primary); 
     transition: 0.3s;
+}
+.btn-mobile {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary);
+    cursor: pointer;
 }
 .btn-topo {
     position: fixed;
@@ -337,17 +345,35 @@ footer ul{
         padding-right: 20px; 
     }
     nav {
-        flex-direction: column; 
-        gap: 20px;
-        padding-bottom: 20px;
+        justify-content: space-between; 
+        padding: 20px;
+        position: relative; 
+    }
+    .btn-mobile {
+        display: block;
     }
     .navegacao {
-        margin-right: 0;   
+        display: none; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
         width: 100%;
-        justify-content: center; 
-        flex-wrap: wrap;     
-        gap: 15px;
-        font-size: 0.9rem;  
+        background-color: var(--bg-card);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+        gap: 20px;
+        border-top: 1px solid #e2e8f0;
+    }
+    .navegacao.ativo {
+        display: flex;
+        animation: descerMenu 0.3s ease-in-out forwards;
+    }
+    @keyframes descerMenu {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
     main {
         margin-top: 40px; 
@@ -386,4 +412,5 @@ footer ul{
         justify-content: center;
         padding: 0;
     }
+
 }

@@ -17,19 +17,16 @@
             <i class="fa-solid fa-code"></i>
             Portfólio
         </div>
-        <ul class="navegacao">
-            <li>
-                <a href="#"> Inicio</a>
-            </li>
-            <li>
-                <a href="#divsb "> Sobre mim</a>
-            </li>
-            <li>
-                <a href="#projetos"> Projetos</a>
-            </li>
-            <li>
-                <a href="#contato"> Contato</a>
-            </li>
+
+        <button class="btn-mobile" aria-label="Abrir Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="navegacao" id="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#divsb">Sobre mim</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
     <main>
@@ -316,6 +313,30 @@
     <a href="#" class="btn-topo">
         <i class="fa-solid fa-arrow-up"></i>
     </a>
+    <script>
+        const btnMobile = document.querySelector('.btn-mobile');
+        const menu = document.querySelector('.navegacao');
+        const links = document.querySelectorAll('.navegacao a');
+
+        function toggleMenu() {
+            menu.classList.toggle('ativo');
+            
+            const icon = btnMobile.querySelector('i');
+            if (menu.classList.contains('ativo')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        btnMobile.addEventListener('click', toggleMenu);
+
+        links.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
 </body>
 
 </html>
