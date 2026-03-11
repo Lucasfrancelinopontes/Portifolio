@@ -417,21 +417,15 @@ footer p {
     margin: 0;
 }
 
-footer ul {
-    display: flex;
-    gap: 20px;
-    font-weight: 600;
+#litte-bag {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
 }
-
-footer ul li {
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-footer ul li:hover {
+#litte-bag:hover{
     color: var(--accent-yellow);
+    cursor: pointer;
 }
-
 /* Responsividade */
 @media (max-width: 768px) {
     nav, .sec1, .sec2, footer {
